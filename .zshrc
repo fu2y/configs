@@ -13,6 +13,7 @@ alias ls='ls --color=auto'
 alias unpack='aunpack'
 alias shutdown='shutdown -h now'
 alias del="mv -t ~/trash"
+alias "mount stick"='sudo mount /dev/sdb /mnt/stick'
 
 # Setting up the prompt
 autoload -U colors && colors

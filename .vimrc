@@ -10,10 +10,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
 
 " General {{{
   Bundle 'ctrlp.vim'
   Bundle 'scroolose/nerdtree'
+  Bundle 'DirDiff.vim'
 " }}}
 
 " end of vundle section
@@ -68,3 +70,22 @@ set makeprg=gcc\ %\ &&\ ./a.out
 
 map <F2> :NERDTree<CR>
 let NERDTreeQuitOnOpen = 1
+
+"#######################################################################
+" You Complete Me Settings
+
+set completeopt-=preview " no preview window in vim
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
+
+"#######################################################################
+" Syntastic Settings
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntax_always_populate_loc_list = 1
+let g:syntax_auto_loc_list = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore=E501,E225,E251,E265,E261'
